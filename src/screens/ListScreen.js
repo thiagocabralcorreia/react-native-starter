@@ -16,7 +16,6 @@ const ListScreen = () => {
       <Text style={styles.title}>Using FlatList</Text>
       <FlatList
       style={styles.flatList}
-      showsHorizontalScrollIndicator={false}
       keyExtractor={(friends) => friends.name}
       data={friends}
       renderItem={({item}) => {
