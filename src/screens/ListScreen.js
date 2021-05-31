@@ -1,24 +1,27 @@
 import React from 'react';
 import { View, Text, FlatList } from 'react-native';
+import styles from './styles/styles';
 
 const ListScreen = () => {
     const friends = [
-        {name: 'Friend #1', age: 22},
-        {name: 'Friend #2', age: 32},
-        {name: 'Friend #3', age: 35},
-        {name: 'Friend #4', age: 38},
-        {name: 'Friend #5', age: 30},
-        {name: 'Friend #6', age: 23},
+        {name: 'Arthur', age: 22},
+        {name: 'Mary', age: 32},
+        {name: 'George', age: 35},
+        {name: 'Agatha', age: 38},
+        {name: 'Neil', age: 30},
+        {name: 'Charles', age: 23},
     ]
   return (
-    <View>
+    <View style={styles.container}>
+      <Text style={styles.title}>Using FlatList</Text>
       <FlatList
-      horizontal
+      style={styles.flatList}
       showsHorizontalScrollIndicator={false}
       keyExtractor={(friends) => friends.name}
       data={friends}
       renderItem={({item}) => {
-          return <Text>{item.name} - Age: {item.age}</Text>
+          return (
+          <Text style={styles.list}>{item.name} - Age: {item.age}</Text>)
       }}/>
     </View>
     )
